@@ -1,42 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt-BR">
 <head>
   <title>Exercício 02</title>
+  <meta charset="UTF-8">
 </head>
 
 <body>
-  <button id="new">Novo quadrado</button>
+    <script>
 
-  <div id="squares"></div>
+        //Criar div
+        var divElement = document.createElement('div');
+        divElement.setAttribute('id', 'app');
 
-  <script>
-    var btnElement = document.getElementById('new');
-    var squaresElement = document.getElementById('squares');
+        var containerDiv = document.querySelector('body');
+        containerDiv.appendChild(divElement);
+        
+        //Criar button
+        var btnElement = document.createElement('button');
+        btnElement.setAttribute('id', 'botao');
 
-    function getRandomColor() {
-      var letters = '0123456789ABCDEF';
-      var color = '#';
-      for (var i = 0; i < 6; i++) {
-        color += letters[Math.floor(Math.random() * 16)];
-      }
-      return color;
-    }
+        var textBtn = document.createTextNode('Novo quadrado');
+        btnElement.appendChild(textBtn);
 
-    btnElement.onclick = function () {
-      var square = document.createElement('div');
+        var containerElement = document.querySelector('#app');
+        containerElement.appendChild(btnElement);
 
-      square.style.width = '100px';
-      square.style.height = '100px';
-      square.style.backgroundColor = '#F00';
+        //Onclick
+        btnElement.onclick = function(divBox){
+            var divBox = document.createElement('div');
+            divBox.setAttribute('style', 'width: 100px;height: 100px;');
+            divBox.style.backgroundColor = '#F00';
 
-      square.onmouseover = function () {
-        square.style.backgroundColor = getRandomColor();
-      }
+            containerBox = document.querySelector('#app');
+            containerBox.appendChild(divBox);
 
-      squaresElement.appendChild(square);
-    };
-  </script>
+            divBox.onmouseover = function () {
+                divBox.style.backgroundColor = getRandomColor();
+            }
+            divBox.appendChild(divBox);
+        }
+
+        function getRandomColor() {
+            var letters = "0123456789ABCDEF";
+            var color = "#";
+            for (var i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+        var newColor = getRandomColor(); // #E943F0
+    </script>
 </body>
 
 </html>
