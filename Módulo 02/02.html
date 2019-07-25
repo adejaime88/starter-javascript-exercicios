@@ -6,37 +6,34 @@
 </head>
 
 <body>
-  <button id="new">Novo quadrado</button>
+    <script>
 
-  <div id="squares"></div>
+        //Criar div
+        var divElement = document.createElement('div');
+        divElement.setAttribute('id', 'app');
 
-  <script>
-    var btnElement = document.getElementById('new');
-    var squaresElement = document.getElementById('squares');
+        var containerDiv = document.querySelector('body');
+        containerDiv.appendChild(divElement);
+        
+        //Criar button
+        var btnElement = document.createElement('button');
+        btnElement.setAttribute('id', 'botao');
 
-    function getRandomColor() {
-      var letters = '0123456789ABCDEF';
-      var color = '#';
-      for (var i = 0; i < 6; i++) {
-        color += letters[Math.floor(Math.random() * 16)];
-      }
-      return color;
-    }
+        var textBtn = document.createTextNode('Novo quadrado');
+        btnElement.appendChild(textBtn);
 
-    btnElement.onclick = function () {
-      var square = document.createElement('div');
+        var containerElement = document.querySelector('#app');
+        containerElement.appendChild(btnElement);
 
-      square.style.width = '100px';
-      square.style.height = '100px';
-      square.style.backgroundColor = '#F00';
+        //Onclick
+        btnElement.onclick = function(divBox){
+            var divBox = document.createElement('div');
+            divBox.setAttribute('style', 'background-color: rgb(255, 0, 0);width: 100px;height: 100px;');
 
-      square.onmouseover = function () {
-        square.style.backgroundColor = getRandomColor();
-      }
-
-      squaresElement.appendChild(square);
-    };
-  </script>
+            containerBox = document.querySelector('#app');
+            containerBox.appendChild(divBox);
+        }
+    </script>
 </body>
 
 </html>
