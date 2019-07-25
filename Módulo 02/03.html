@@ -1,25 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt-BR">
 <head>
   <title>Exercício 03</title>
+  <meta charset="UTF-8">
 </head>
 
 <body>
-  <ul></ul>
+    <script>
+        //Criar div
+        var divElement = document.createElement('div');
+        divElement.setAttribute('id', 'app');
 
-  <script>
-    var nomes = ['Diego', 'Gabriel', 'Lucas'];
-    var listElement = document.querySelector('ul');
+        var containerDiv = document.querySelector('body');
+        containerDiv.appendChild(divElement);
 
-    for (nome of nomes) {
-      var liElement = document.createElement('li');
-      var textElement = document.createTextNode(nome);
+        //Criar UL
+        var ulElement = document.createElement('ul');
+        ulElement.setAttribute('class', 'ulapp');
 
-      liElement.appendChild(textElement);
-      listElement.appendChild(liElement);
-    }
-  </script>
+        var containerUl = document.querySelector('#app');
+        containerUl.appendChild(ulElement);
+
+        var nomes = ['Diego', 'Gabriel', 'Lucas'];
+    
+        var listElement = document.querySelector('ul');
+        
+        for (nome of nomes) {
+        var liElement = document.createElement('li');
+        var textElement = document.createTextNode(nome);
+        liElement.appendChild(textElement);
+        listElement.appendChild(liElement);
+        }
+
+    </script>
 </body>
 
 </html>
